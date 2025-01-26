@@ -1,0 +1,66 @@
+/* Reset default margin/padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Center content */
+body, html {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    background-color: #333;
+}
+
+/* Main container */
+.flashlight-container {
+    text-align: center;
+}
+
+/* Flashlight holder (the outer shell) */
+.flashlight {
+    width: 200px;
+    height: 200px;
+    background-color: #222;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+}
+
+/* The light effect */
+.light {
+    width: 150%;
+    height: 150%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, rgba(0, 0, 0, 0.5) 70%);
+    position: absolute;
+    top: -25%;
+    left: -25%;
+    border-radius: 50%;
+    opacity: 0; /* Start in dark mode (off) */
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Toggle button */
+.toggle-btn {
+    padding: 10px 20px;
+    background-color: #f1c40f;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.toggle-btn:hover {
+    background-color: #f39c12;
+}
+
+.dark-mode .light {
+    opacity: 1; /* Light mode (on) */
+}
+
